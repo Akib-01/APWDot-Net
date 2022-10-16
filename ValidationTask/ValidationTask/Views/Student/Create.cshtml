@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Student</title>
+</head>
+<body>
+    <h2>Create</h2>
+    @Html.ValidationSummary()
+<form action="" method="post" novalidate>
+    <label>Name: </label><br />
+    <input class="form-control" type="text" name="name"  placeholder="Enter your name" value="@(Model ==null ? "" : Model.name)" />@Html.ValidationMessage("name")  <br /><br />
+    <label>ID: </label><br />
+    <input class="form-control" type="text" name="ID" placeholder="Format(xx-xxxxx-xx)" value="@(Model ==null ? "" : Model.ID)" />@Html.ValidationMessage("ID")<br /><br />
+    <label>Gender: </label><br />
+    <input class="form-control" type="radio" name="gender" />Male
+    <input class="form-control" type="radio" name="gender" />Female <br /> @Html.ValidationMessage("gender") <br /><br />
+    <label>E-Mail: </label><br />
+    <input type="email" name="email" placeholder="Enter your valid Email here" value="@(Model ==null ? "" : Model.email)" />@Html.ValidationMessage("email") <br /><br />
+    <label>Password:</label> <br />
+    <input class="form-control" type="password" name="pass" value="@(Model ==null ? "" : Model.pass)"/> @Html.ValidationMessage("pass") <br /> <br />
+    <label>Confirm Password: </label> <br />
+    <input class="form-control" type="password" name="cpass" value="@(Model ==null ? "" : Model.cpass)" /> @Html.ValidationMessage("cpass") <br /> <br />
+    <label>DOB: </label><br />
+    <input class="form-control" type="date" name="dob" value="@(Model ==null ? "" : Model.dob)" /> @Html.ValidationMessage("dob") <br /><br />
+    <input class="form-control" type="submit" value="Create" />
+
+</form>
+</body>
+</html>
+
+
+
